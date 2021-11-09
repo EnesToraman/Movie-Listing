@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MuiContainer-root {
+  background-color: rgba(0, 0, 255, 0.3);
+  padding-top: 5vh;
+  width: 500px;
+  min-width: 375px;
+}
+
+.MuiCard-root {
+  background-color: rgba(0, 0, 255, 0.4) !important;
+  color: white !important;
+  height: 30vh;
+  border-radius: 15px !important;
+}
+
+.image-grid {
+  height: 100%;
+  width: auto;
+}
+
+img {
+  height: 90%;
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+}
+
+.text-button-grid {
+  height: 50%;
+  width: auto;
+}

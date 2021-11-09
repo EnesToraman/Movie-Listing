@@ -1,9 +1,11 @@
+import { Container } from "@mui/material";
+import { MovieFeed } from "./components/movieFeed/movieFeed";
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Container maxWidth="xs">
+      <MovieFeed />
+    </Container>
   );
 }
 
