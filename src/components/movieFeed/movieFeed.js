@@ -15,34 +15,35 @@ export const MovieFeed = () => {
         fetchAPI();
     });
 
-    const handleButtonActivity = index => {
-        setDisabledButton([...disabledButton, index]);
-        setIsAdded([...isAdded, index])
+    const handleButtonActivity = imdbID => {
+        setDisabledButton([...disabledButton, imdbID]);
+        setIsAdded([...isAdded, imdbID]);
     }
 
     return (
         <Stack spacing={2} p={2}>
             {movieData.length &&
-                movieData.map((movie, index) =>
-                    < Card >
+                movieData.map( movie =>
+                    < Card key={movie}>
                         <Grid container>
                             <Grid className="image-grid" item xs={6} p={3}>
                                 <img src={movie.Poster} alt="Movie Poster" />
                             </Grid>
                             <Grid item xs={6} pt={3}>
-                                <Grid className="text-button-grid" xs={12} pr={1}>
+                                <Grid className="text-button-grid" item xs={12} pr={1}>
                                     <Typography variant="subtitle1">{movie.Title}</Typography>
                                     <Typography variant="button">{movie.Year}</Typography>
                                 </Grid>
-                                <Grid className="text-button-grid" xs={12} textAlign="center" pt={4}>
+                                <Grid className="text-button-grid" item xs={12} textAlign="center" pt={4}>
                                     <Button
-                                        onClick={() => handleButtonActivity(index)}
+                                        onClick={() => handleButtonActivity(movie.imdbID)}
                                         disableRipple
-                                        disabled={disabledButton.includes(index)}
+                                        disableFocusRipple
+                                        disabled={disabledButton.indexOf(movie.imdbID) !== -1}
                                         variant="contained"
                                         color="success"
                                         size="small">
-                                        {isAdded.includes(index) ? 'Added' : 'Add to list'}
+                                        {isAdded.includes(movie.imdbID) ? 'Added' : 'Add to list'}
                                     </Button>
                                 </Grid>
                             </Grid>
