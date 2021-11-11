@@ -11,12 +11,21 @@ export const MyList = () => {
             setMyList(await fetchMyList());
         }
         fetchAPI();
-    }, [setMyList]);
+    }, []);
+
+    useEffect(() => {
+        setIsAdded(myList.map((movie) => {
+            return movie.id;
+        }))
+    }, [myList])
 
     const removeFromList = id => {
-        const newIsAdded = isAdded.filter(movie => movie.id !== id)
-        setIsAdded(...newIsAdded);
-        setMyList(newIsAdded);
+        fetch('http://localhost:3004/my-list/' + id, {
+            method: 'DELETE'
+        });
+        setMyList(myList.filter((movie) => {
+            return movie.id !== id;
+        }));
     }
 
     return (

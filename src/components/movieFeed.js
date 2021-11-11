@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useMovieDataContext } from '../contexts/movieDataContext';
 
 export const MovieFeed = () => {
-    const { movieData, setMovieData, isAdded, setIsAdded } = useMovieDataContext();
+    const { movieData, setMovieData, isAdded, setIsAdded, myList } = useMovieDataContext();
     const [hasMore, sethasMore] = useState(true);
     const [page, setpage] = useState(2);
 
@@ -72,7 +72,7 @@ export const MovieFeed = () => {
                                             onClick={() => addToList(movie.id, movie.title, movie.year, movie.poster)}
                                             disableRipple
                                             disableFocusRipple
-                                            disabled={isAdded.indexOf(movie.id) !== -1}
+                                            disabled={isAdded.includes(movie.id)}
                                             variant="contained"
                                             color="success"
                                             size="small">
