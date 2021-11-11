@@ -16,7 +16,7 @@ export const MovieFeed = () => {
             setMovieData(await fetchMovieData());
         }
         fetchAPI();
-    });
+    }, []);
 
     const fetchMoreMovies = async () => {
         const res = await fetch(
@@ -30,7 +30,6 @@ export const MovieFeed = () => {
         const moreMovieData = await fetchMoreMovies();
 
         setMovieData([...movieData, ...moreMovieData]);
-        console.log(movieData);
         if (moreMovieData.length === 0 || moreMovieData.length < 10) {
             sethasMore(false);
         }
