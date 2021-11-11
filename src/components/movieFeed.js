@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import { fetchMovieData } from '../api/movieApi';
+import { fetchMovieData } from '../apis/movieApi';
 import { Button, Grid, Stack, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useMovieDataContext } from '../contexts/movieDataContext';
 
 export const MovieFeed = () => {
-    const [movieData, setMovieData] = useState([]);
-    const [disabledButton, setDisabledButton] = useState([]);
-    const [isAdded, setIsAdded] = useState([])
+    const { movieData, setMovieData, disabledButton, setDisabledButton, isAdded, setIsAdded } = useMovieDataContext();
     const [hasMore, sethasMore] = useState(true);
     const [page, setpage] = useState(2);
 
@@ -16,7 +15,7 @@ export const MovieFeed = () => {
             setMovieData(await fetchMovieData());
         }
         fetchAPI();
-    }, []);
+    }, [setMovieData]);
 
     const fetchMoreMovies = async () => {
         const res = await fetch(
