@@ -24,7 +24,7 @@ export const MovieFeed = () => {
         <Stack spacing={2} p={2}>
             {movieData.length &&
                 movieData.map( movie =>
-                    < Card key={movie}>
+                    < Card key={movie.imdbID}>
                         <Grid container>
                             <Grid className="image-grid" item xs={6} p={3}>
                                 <img src={movie.Poster} alt="Movie Poster" />

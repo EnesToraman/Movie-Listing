@@ -6,7 +6,6 @@ function App() {
   return (
     <Container maxWidth="xs">
       <SectionTabs />
-      <MovieFeed />
     </Container>
   );
 }

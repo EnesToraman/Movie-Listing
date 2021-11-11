@@ -17,6 +17,7 @@ code {
   padding-top: 5vh;
   width: 500px;
   min-width: 375px;
+  min-height: 100vh;
 }
 
 .MuiCard-root {
@@ -43,10 +44,9 @@ img {
 }
 
 .MuiTabs-root {
-  background-color: rgba(0, 0, 255, 0.1) !important;
   width: 100%;
-  color: white !important;
 }
 
-.MuiTab-root {
+.MuiBox-root {
+  background-color: rgba(0, 0, 255, 0.0) !important;
 }
