@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { MovieFeed } from './movieFeed';
+import { MyList } from './myList';
 
 export const SectionTabs = () => {
   const [value, setValue] = React.useState(0);
@@ -21,7 +22,7 @@ export const SectionTabs = () => {
         <MovieFeed />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <MyList />
       </TabPanel>
     </Box>
   );

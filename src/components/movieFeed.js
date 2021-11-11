@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useMovieDataContext } from '../contexts/movieDataContext';
 
 export const MovieFeed = () => {
-    const { movieData, setMovieData, disabledButton, setDisabledButton, isAdded, setIsAdded } = useMovieDataContext();
+    const { movieData, setMovieData, isAdded, setIsAdded } = useMovieDataContext();
     const [hasMore, sethasMore] = useState(true);
     const [page, setpage] = useState(2);
 
@@ -36,7 +36,6 @@ export const MovieFeed = () => {
     };
 
     const handleButtonActivity = id => {
-        setDisabledButton([...disabledButton, id]);
         setIsAdded([...isAdded, id]);
     }
 
@@ -66,7 +65,7 @@ export const MovieFeed = () => {
                                             onClick={() => handleButtonActivity(movie.id)}
                                             disableRipple
                                             disableFocusRipple
-                                            disabled={disabledButton.indexOf(movie.id) !== -1}
+                                            disabled={isAdded.indexOf(movie.id) !== -1}
                                             variant="contained"
                                             color="success"
                                             size="small">
