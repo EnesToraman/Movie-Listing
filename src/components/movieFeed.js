@@ -35,7 +35,14 @@ export const MovieFeed = () => {
         setpage(page + 1);
     };
 
-    const handleButtonActivity = id => {
+    const addToList = (id, title, year, poster) => {
+        const movie = { id, title, year, poster };
+
+        fetch('http://localhost:3004/my-list', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(movie)
+    })
         setIsAdded([...isAdded, id]);
     }
 
@@ -48,7 +55,7 @@ export const MovieFeed = () => {
             endMessage="Aight that's all folks"
         >
             <Stack spacing={2} p={2}>
-                {movieData.length &&
+                {movieData.length ?
                     movieData.map(movie =>
                         < Card key={movie.id}>
                             <Grid container>
@@ -62,7 +69,7 @@ export const MovieFeed = () => {
                                     </Grid>
                                     <Grid className="text-button-grid" item xs={12} textAlign="center" pt={4}>
                                         <Button
-                                            onClick={() => handleButtonActivity(movie.id)}
+                                            onClick={() => addToList(movie.id, movie.title, movie.year, movie.poster)}
                                             disableRipple
                                             disableFocusRipple
                                             disabled={isAdded.indexOf(movie.id) !== -1}
@@ -76,7 +83,7 @@ export const MovieFeed = () => {
                             </Grid>
                         </Card>
                     )
-                }
+                    : null}
             </Stack >
         </InfiniteScroll>
     )

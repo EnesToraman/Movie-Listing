@@ -8,13 +8,16 @@ export const useMovieDataContext = () => {
 
 export const MovieDataProvider = ({ children }) => {
     const [movieData, setMovieData] = useState([]);
+    const [myList, setMyList] = useState([]);
     const [isAdded, setIsAdded] = useState([])
 
     const value = {
         movieData,
         setMovieData,
         isAdded,    
-        setIsAdded
+        setIsAdded,
+        myList,
+        setMyList
     }
 
     return (

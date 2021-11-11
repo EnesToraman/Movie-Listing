@@ -10,3 +10,12 @@ export const fetchMovieData = async () => {
         console.log(error);
     }
 }
+
+export const fetchMyList = async () => {
+    try {
+        const { data } = await axios.get(`http://localhost:3004/my-list`);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
