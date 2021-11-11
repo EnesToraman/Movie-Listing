@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchMovieData } from '../../api/movieApi';
+import { fetchMovieData } from '../api/movieApi';
 import { Button, Grid, Stack, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 
