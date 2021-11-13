@@ -8,7 +8,7 @@ import { useMovieDataContext } from '../contexts/movieDataContext';
 export const MovieFeed = () => {
     const { movieData, setMovieData, isAdded, setIsAdded, myList } = useMovieDataContext();
     const [hasMore, sethasMore] = useState(true);
-    const [page, setpage] = useState(2);
+    const [page, setPage] = useState(2);
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -32,7 +32,7 @@ export const MovieFeed = () => {
         if (moreMovieData.length === 0 || moreMovieData.length < 10) {
             sethasMore(false);
         }
-        setpage(page + 1);
+        setPage(page + 1);
     };
 
     const addToList = (id, title, year, poster) => {
