@@ -289,5 +289,12 @@
       "poster": "https://ia.media-imdb.com/images/M/MV5BYjUxN2EwNTEtZjEwYy00YmZiLTg4MDUtZmIxMzQ3MGZlYWU5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNzAwODkyODg@._V1_UY268_CR82,0,182,268_AL_.jpg"
     }
   ],
-  "my-list": []
+  "my-list": [
+    {
+      "id": "tt0120915",
+      "title": "Star Wars: Episode I - The Phantom Menace",
+      "year": "1999",
+      "poster": "https://ia.media-imdb.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    }
+  ]
 }
