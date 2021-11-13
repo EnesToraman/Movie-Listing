@@ -289,18 +289,5 @@
       "poster": "https://ia.media-imdb.com/images/M/MV5BYjUxN2EwNTEtZjEwYy00YmZiLTg4MDUtZmIxMzQ3MGZlYWU5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNzAwODkyODg@._V1_UY268_CR82,0,182,268_AL_.jpg"
     }
   ],
-  "my-list": [
-    {
-      "id": "tt2527336",
-      "title": "Star Wars: The Last Jedi",
-      "year": "2017",
-      "poster": "https://ia.media-imdb.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_UX182_CR0,0,182,268_AL_.jpg"
-    },
-    {
-      "id": "tt2488496",
-      "title": "Star Wars: The Force Awakens",
-      "year": "2015",
-      "poster": "https://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_UX182_CR0,0,182,268_AL_.jpg"
-    }
-  ]
+  "my-list": []
 }
